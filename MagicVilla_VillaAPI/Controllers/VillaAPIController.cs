@@ -33,16 +33,16 @@ namespace MagicVilla_VillaAPI.Controllers
         //[ProducesResponseType(200,Type=typeof(VillaDTO)]
         //[ProducesResponseType(400)]
         
-        public ActionResult<VillaDTO> GetVilla(int id)
+        public async Task<ActionResult<VillaDTO>> GetVilla(int id)
 		{
 			if (id == 0)
 				return BadRequest();
 
-			var villa = _db.Villas.FirstOrDefault(u => u.Id == id);
+			var villa = await _db.Villas.FirstOrDefaultAsync(u => u.Id == id);
 			if (villa == null)
 				return NotFound();
 			
-			return Ok(villa);
+			return Ok(_mapper.Map<VillaDTO>(villa));
 					 
 		}
 
