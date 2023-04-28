@@ -22,7 +22,7 @@ namespace MagicVilla_VillaAPI.Repository
         public async Task<Villa> GetAsync(Expression<Func<Villa, bool>> filter = null, bool tracker = true)
         {
             IQueryable<Villa> query = _db.Villas;
-            if(!tracker)
+            if(tracker)
             {
                 query = query.AsNoTracking();
             }
@@ -51,7 +51,7 @@ namespace MagicVilla_VillaAPI.Repository
         }
         public async Task UpdateAsync(Villa entity)
         {
-            _db.Update(entity);
+            _db.Villas.Update(entity);
             await SaveAsync();
 
         }
