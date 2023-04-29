@@ -1,16 +1,11 @@
-﻿using MagicVilla_VillaAPI.Models;
-using System.Linq.Expressions;
+﻿using MagicT_TAPI.Repository.IRepository;
+using MagicVilla_VillaAPI.Models;
 
 namespace MagicVilla_VillaAPI.Repository.IRepository
 {
-    public interface IVillaRepository
+    public interface IVillaRepository : IRepository<Villa>
     {
-        Task<List<Villa>> GetAllAsync(Expression<Func<Villa,bool>> filter = null);
-        Task<Villa> GetAsync(Expression<Func<Villa,bool>> filter = null,bool tracker = true);
-        Task CreateAsync(Villa entity);
-        Task UpdateAsync(Villa entity);
-        Task RemoveAsync(Villa entity);
-        Task SaveAsync();
-
+        Task<Villa> UpdateAsync(Villa entity);
+        
     }
 }
