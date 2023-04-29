@@ -1,0 +1,13 @@
+﻿1. DTOs provide a way to send only the necessary data between the client and server, rather than sending the entire domain object graph.
+
+2. Versioning: In larger applications, it's common to have multiple versions of the same API or service running concurrently. 
+DTOs allow us to version these APIs without affecting the underlying data model, since the DTO can be changed independently of the domain object it represents.
+
+3.Security: DTOs allow us to restrict the data being exposed to a client or service. 
+By creating a DTO that includes only the necessary fields, we can prevent sensitive data from being leaked.
+
+4.Mapping: DTOs can be used to map data between different layers or components of an application. 
+For example, we can use DTOs to map data between a database and a presentation layer, or between a microservice and a client application.
+
+5.Encapsulation of data: DTOs allow us to encapsulate data and provide a well-defined contract between different layers or components of an application.
+This helps to reduce coupling between different parts of the system, making it easier to modify and maintain the code over time.
