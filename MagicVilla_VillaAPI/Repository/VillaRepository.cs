@@ -3,7 +3,7 @@ using MagicVilla_VillaAPI.Models;
 
 namespace MagicVilla_VillaAPI.Repository.IRepository
 {
-    public class VillaRepository<T> :Repository<Villa>, IVillaRepository
+    public class VillaRepository :Repository<Villa>, IVillaRepository
     {
         private readonly ApplicationDbContext _db;
         public VillaRepository(ApplicationDbContext db): base(db)
